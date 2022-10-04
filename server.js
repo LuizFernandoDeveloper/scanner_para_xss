@@ -51,5 +51,63 @@ async function validaXss(url){
         dialog.accept();
 
     })
+
+    for(script in MALICIOUS_SCRIPT){
+
+        let newUrl = validaUrl(url, MALICIOUS_SCRIPT[script])
+        if(newUrl != ""){
+            await page2.goto(newUrl)
+        }
+        if(estaVulneravel){}
+            browser.close();
+            return True;
+        }
+        for( i in formsArray){
+            try{
+                await page2.goto(url, {waitUntil: "networkidle2", timeout: 6000});
+                let inputsArray = await formsArray[i]
+                .$$eval('input[type="text"], input[type="search"], input:not([type]), textarea',
+                (inputs) => 
+                    inputs.map((input) => input.id ? '#' + input.id: '.' + input.className));
+                for(input in inputsArray){
+                    let selector = inputsArray[input]
+                    if(selector.charAt(0) == ".") {
+                        selector = selector.split(' ');
+                    }
+                    await page2.type(selector, MALICIOUS_SCRIPT[script], {delay: 20});
+                }
+            }
+            catch(err){
+
+
+            }
+        }
+
+    }
 }
-    
+
+const validaUrl = (url, script) => {
+    let temp = {};
+    let newUrl = "";
+    temp = url.split('?');
+    let tmp = queryString.parse(temp[1]);
+    let key = Object.keys(tmp);
+    if(temp[1]){
+        newUrl = temp[0] + "?";
+        for(let k in tmp){
+            if(key[0] === k){
+                newUrl = newUrl +  k + "=" + script;
+                
+            }
+            else{
+                newUrl = newUrl + "&" + k + "=" + script;
+
+            }
+
+
+        }
+    }
+
+    return newUrl
+
+}
