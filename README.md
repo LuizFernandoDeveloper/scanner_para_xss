@@ -2,8 +2,8 @@
 <img src="./img/cross-site-scripting-xss.jpg" alt="Cross site scripting">
 
 
-## Licença vinculada ao repositório
-[![NPM](https://github.com/LuizFernandoDeveloper/scanner_para_xss)](https://github.com/LuizFernandoDeveloper/scanner_para_xss/blob/main/LICENSE)
+ Licença vinculada ao repositório 
+[![NPM](https://img.shields.io/github/license/LuizFernandoDeveloper/scanner_para_xss)](https://github.com/LuizFernandoDeveloper/scanner_para_xss/blob/main/LICENSE)
 
 #
 ## O que você deve instalar no diretorio raiz ?
