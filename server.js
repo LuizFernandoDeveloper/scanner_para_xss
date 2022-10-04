@@ -18,7 +18,7 @@ app.get("/scanner", async (req, res) => {
     res.send(possuiXSS);
 })
 
-server.listen(process.env.PORT || 4007, () => {
+server.listen(process.env.PORT || 4000, () => {
     console.log("Server iniciado")
 })
 
