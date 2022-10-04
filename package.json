@@ -1,0 +1,27 @@
+{
+  "name": "criando_scanner-_de_xss",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000S\u0000c\u0000a\u0000n\u0000n\u0000-\u0000d\u0000e\u0000-\u0000x\u0000s\u0000s\u0000\r\u0000 \u0000",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuizFernandoDeveloper/Scann-de-xss.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuizFernandoDeveloper/Scann-de-xss/issues"
+  },
+  "homepage": "https://github.com/LuizFernandoDeveloper/Scann-de-xss#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "puppeteer": "^18.0.5",
+    "query-string": "^7.1.1"
+  }
+}
