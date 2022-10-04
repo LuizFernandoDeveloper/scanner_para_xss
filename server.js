@@ -76,6 +76,14 @@ async function validaXss(url){
                     }
                     await page2.type(selector, MALICIOUS_SCRIPT[script], {delay: 20});
                 }
+                let btnsArray = await formsArray[i]
+                .$$eva('input[type="submit"], button[type="submit"]', (subs) => subs.map((sub) => (sub.id ? "#" + sub.id :sub.className)));
+                let btn = btnsArray[0].split('');
+                await page2.click(btn);
+                newUrl = validaUrl(page2.url(), MALICIOUS_SCRIPT[script]);
+                if(newUrl != ""){
+                    await page2.goto(newUrl)
+                }
             }
             catch(err){
 
